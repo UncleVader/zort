@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import useMousePosition from "@/hooks/useMousePosition";
+import MainButton from "@/components/shared/MainButton";
 
 export default function Hero() {
   const {
@@ -45,13 +46,7 @@ export default function Hero() {
         <p className="text-xl md:text-2xl text-blue-100 mb-8 md:w-2/3 mx-auto">
           Harness the power of AI to track, analyze, and optimize your sports betting. Instant bet slip scanning, real-time analytics, and intelligent insights at your fingertips.
         </p>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold text-lg cursor-pointer"
-        >
-          Download Now
-        </motion.button>
+        <MainButton onClick={() => window.open('https://apps.apple.com/gb/app/zort/id6740245454',"_blank")}>Download Now</MainButton>
       </motion.div>
     </section>
   );

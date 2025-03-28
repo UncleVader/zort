@@ -1,9 +1,10 @@
 'use client';
 
-import Hero from '@/components/Hero';
-import AppShowcase from '@/components/AppShowcase';
-import Footer from '@/components/Footer';
-import Features from "@/components/Features";
+import Hero from '@/components/sections/Hero';
+import AppShowcase from '@/components/sections/AppShowcase';
+import Footer from '@/components/sections/Footer';
+import Features from "@/components/sections/Features";
+import HowItWorks from "@/components/sections/HowItWorks";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <AppShowcase />
       <Features />
+      <HowItWorks />
       <Footer />
     </main>
   );

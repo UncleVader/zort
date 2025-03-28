@@ -1,7 +1,8 @@
 'use client';
 
 import {motion, MotionValue, useScroll, useTransform} from 'framer-motion';
-import {useRef} from 'react';
+import React, {useRef} from 'react';
+import MainButton from "@/components/shared/MainButton";
 
 export default function AppShowcase() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,7 +28,7 @@ export default function AppShowcase() {
 
 
   return (
-    <section ref={containerRef} className="h-[1200vh] relative bg-dark-main">
+    <section ref={containerRef} className="h-[1200vh] relative bg-dark-main" id="showcase">
       <div className={"sticky top-0 h-screen flex py-20"}>
         <div className="container h-full mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
           <div className="h-[40vh] md:h-full w-full md:w-1/2 relative overflow-hidden flex items-center">
@@ -40,13 +41,11 @@ export default function AppShowcase() {
               <h2 className="text-4xl font-bold mb-6">Manage and Track Your Bets Effortlessly</h2>
               <ul className="text-xl mb-8 list-disc list-inside [&_li]:mb-4">
                 <li>Key Stats at a Glance: See your total bets placed, win rate, and total profit, providing an immediate understanding of your overall betting performance.</li>
-                <li>Easy Bet Entry: The prominent "+ Add New Bet" button allows you to quickly and easily log your bets, ensuring no activity goes unrecorded.</li>
-                <li>Access Detailed Dashboards: The "Dashboards" button takes you to in-depth analytics and visualizations, allowing you to dive deeper into your betting data.</li>
+                <li>Easy Bet Entry: The prominent &#34;+ Add New Bet&#34; button allows you to quickly and easily log your bets, ensuring no activity goes unrecorded.</li>
+                <li>Access Detailed Dashboards: The &#34;Dashboards&#34; button takes you to in-depth analytics and visualizations, allowing you to dive deeper into your betting data.</li>
                 <li>Currency Flexibility: Toggle the currency displayed, allowing you to view your stats in whatever currency you prefer.</li>
               </ul>
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold">
-                Learn More
-              </button>
+              <MainButton>Learn More</MainButton>
             </FeatureSection>
 
             <FeatureSection
@@ -61,9 +60,7 @@ export default function AppShowcase() {
                 <li>Balance History Chart: Visualize your balance fluctuations over time with a historical chart, helping you identify trends and understand the impact of your betting decisions.</li>
                 <li>Key Performance Indicators: Monitor essential stats like monthly profit, win rate, average win, and average loss to track progress and identify areas for improvement.</li>
               </ul>
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold">
-                Learn More
-              </button>
+              <MainButton>Learn More</MainButton>
             </FeatureSection>
 
             <FeatureSection
@@ -77,9 +74,7 @@ export default function AppShowcase() {
                 <li>Win Rate: Instantly see your win rate for different types of bets represented in graphical format.</li>
                 <li>Profit Summary: Review a monthly profit summary with total profit, win rate, biggest win, biggest loss, average stake, and average odds to find strengths and weaknesses in your strategy.</li>
               </ul>
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold">
-                Learn More
-              </button>
+              <MainButton>Learn More</MainButton>
             </FeatureSection>
 
           </div>
