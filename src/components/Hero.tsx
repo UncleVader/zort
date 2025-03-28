@@ -1,21 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useRef } from 'react';
+import useMousePosition from "@/hooks/useMousePosition";
 
 export default function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const headingRef = useRef<HTMLHeadingElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLHeadingElement>) => {
-    if (headingRef.current) {
-      const rect = headingRef.current.getBoundingClientRect();
-      setMousePosition({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      });
-    }
-  };
+  const {
+    targetRef,
+    mousePosition,
+    handleMouseMove
+  } = useMousePosition()
 
   return (
     <section
@@ -30,7 +23,7 @@ export default function Hero() {
       >
         <div className="relative">
           <h1
-            ref={headingRef}
+            ref={targetRef}
             className="text-5xl md:text-7xl font-bold mb-6 p-4"
             style={{
               WebkitTextFillColor: 'transparent',
@@ -39,9 +32,9 @@ export default function Hero() {
               backgroundImage: `radial-gradient(
                 circle at ${mousePosition.x}px ${mousePosition.y}px,
                 var(--secondary) 0%,
-                rgba(0, 242, 254, 0.8) 15%,
-                rgba(0, 242, 254, 0.4) 35%,
-                rgba(0, 242, 254, 0.2) 50%,
+                rgba(0, 242, 254, 0.9) 15%,
+                rgba(0, 242, 254, 0.6) 35%,
+                rgba(0, 242, 254, 0.5) 50%,
                 transparent 100%
               )`
             }}
