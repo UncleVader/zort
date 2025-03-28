@@ -2,9 +2,10 @@ function useScrollToTop() {
 
   const goToAnchor: React.MouseEventHandler<HTMLElement> = (e) => {
     const el = e.target as HTMLAnchorElement
-    if (el.tagName==="A") {
+    const anchorEl = el.tagName==="A" ? el : el.closest('a')
+    if (anchorEl) {
       e.preventDefault()
-      const hash = el.getAttribute('href')?.replace(/\//g,'')
+      const hash = anchorEl.getAttribute('href')?.replace(/\//g,'')
       if (hash) {
         const element = document.querySelector(hash);
         if (element) {

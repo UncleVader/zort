@@ -6,6 +6,7 @@
   --secondary: #00F2FE;
   --grey-1: #25252B;
   --grey-2: #3b3b45;
+  --grey-3: #121212;
 }
 
 @theme inline {
@@ -13,6 +14,7 @@
   --color-foreground: var(--foreground);
   --color-secondary: var(--secondary);
   --color-grey-1: var(--grey-1);
+  --color-grey-3: var(--grey-3);
   --color-dark: #0A0A0F;
   --color-dark-secondary: #1A1A24;
   --font-sans: var(--font-geist-sans);

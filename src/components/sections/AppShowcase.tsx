@@ -11,7 +11,7 @@ export default function AppShowcase() {
   });
   const y = useTransform(scrollYProgress,
     [0,1/4,1/2,3/4,1],
-    ["-20%","60%","-20%","60%","-20%"]
+    ["-40%","50%","-40%","50%","-40%"]
   );
   const opacity1 = useTransform(scrollYProgress,
     [0,1/5,2/5,3/5,4/5,1],
@@ -34,9 +34,9 @@ export default function AppShowcase() {
           <div className="h-[40vh] md:h-full w-full md:w-1/2 relative overflow-hidden flex items-center">
             <FeatureSection
               scrollYProgress={scrollYProgress}
-              thresholds={[0.2, 0.3, 0.5]}
-              positions={["0%", "-100%", "-100%"]}
-              opacities={[1, 0, 0]}
+              thresholds={[0,1/5,2/5,3/5,4/5,1]}
+              positions={["0%", "0%", "-100%", "-100%", "-100%", "-100%"]}
+              opacities={[1,1,0,0,0,0]}
             >
               <h2 className="text-4xl font-bold mb-6">Manage and Track Your Bets Effortlessly</h2>
               <ul className="text-xl mb-8 list-disc list-inside [&_li]:mb-4">
@@ -50,9 +50,9 @@ export default function AppShowcase() {
 
             <FeatureSection
               scrollYProgress={scrollYProgress}
-              thresholds={[0.2, 0.3, 0.5, 0.6]}
-              positions={["100%", "0%", "0%", "-100%"]}
-              opacities={[0, 1, 1, 0]}
+              thresholds={[0,1/5,2/5,3/5,4/5,1]}
+              positions={["100%", "100%", "0%", "0%", "-100%", "-100%"]}
+              opacities={[0,0,1,1,0,0]}
             >
               <h2 className="text-4xl font-bold mb-6">Monitor Your Betting Balance and Track Performance Trends</h2>
               <ul className="text-xl mb-8 list-disc list-inside [&_li]:mb-4">
@@ -65,9 +65,9 @@ export default function AppShowcase() {
 
             <FeatureSection
               scrollYProgress={scrollYProgress}
-              thresholds={[0.5, 0.6, 0.8]}
-              positions={ ["100%", "0%", "0%"]}
-              opacities={[0, 1, 1]}
+              thresholds={[0,1/5,2/5,3/5,4/5,1]}
+              positions={ ["100%", "100%", "100%", "100%", "0%", "0%"]}
+              opacities={[0,0,0,0,1,1]}
             >
               <h2 className="text-4xl font-bold mb-6">Track Your Betting Performance with Detailed Statistics</h2>
               <ul className="text-xl mb-8 list-disc list-inside [&_li]:mb-4">
@@ -95,19 +95,19 @@ export default function AppShowcase() {
                 <motion.img
                   src={"/screen1.png"}
                   alt="BetTracker AI"
-                  className={"object-cover absolute"}
+                  className={"object-contain absolute size-full"}
                   style={{opacity: opacity1}}
                 />
                 <motion.img
                   src={"/screen2.png"}
                   alt="BetTracker AI"
-                  className={"object-cover absolute"}
+                  className={"object-contain absolute size-full"}
                   style={{opacity: opacity2}}
                 />
                 <motion.img
                   src={"/screen3.png"}
                   alt="BetTracker AI"
-                  className={"object-cover absolute"}
+                  className={"object-contain absolute size-full"}
                   style={{opacity: opacity3}}
                 />
               </div>
