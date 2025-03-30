@@ -13,7 +13,7 @@ const TermsAndConditionsModal:FC<IProps> = (props) => {
       title="Terms and Conditions"
       {...props}
     >
-      <div className="[&_h3]:text-secondary [&_h3]:text-lg [&_h4]:text-white [&_h4]:text-lg [&_h5]:text-secondary [&_h5]:text-lg] [&_p]:text-white/50  [&_p]:mb-4 ">
+      <div className="[&_h3]:text-secondary [&_h3]:text-lg [&_h4]:text-secondary [&_h4]:text-lg [&_h5]:text-white [&_h5]:text-lg] [&_p]:text-white/50  [&_p]:mb-4 ">
         <h3>Last Updated: 07 January 2025</h3>
         <p>Welcome to ZORT, an AI-powered bet-tracking application operated by GIS Analytics Limited (&#34;we,&#34; &#34;us,&#34; or
           &#34;our&#34;). By downloading, accessing, or otherwise using ZORT (the &#34;App&#34;), you agree to be bound by the following

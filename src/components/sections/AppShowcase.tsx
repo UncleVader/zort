@@ -26,7 +26,6 @@ export default function AppShowcase() {
     [0,0,0,0,1,1]
   );
 
-
   return (
     <section ref={containerRef} className="h-[1200vh] relative bg-dark-main" id="showcase">
       <div className={"sticky top-0 h-screen flex py-20"}>
@@ -37,46 +36,38 @@ export default function AppShowcase() {
               thresholds={[0,1/5,2/5,3/5,4/5,1]}
               positions={["0%", "0%", "-100%", "-100%", "-100%", "-100%"]}
               opacities={[1,1,0,0,0,0]}
-            >
-              <h2 className="text-4xl font-bold mb-6">Manage and Track Your Bets Effortlessly</h2>
-              <ul className="text-xl mb-8 list-disc list-inside [&_li]:mb-4">
-                <li>Key Stats at a Glance: See your total bets placed, win rate, and total profit, providing an immediate understanding of your overall betting performance.</li>
-                <li>Easy Bet Entry: The prominent &#34;+ Add New Bet&#34; button allows you to quickly and easily log your bets, ensuring no activity goes unrecorded.</li>
-                <li>Access Detailed Dashboards: The &#34;Dashboards&#34; button takes you to in-depth analytics and visualizations, allowing you to dive deeper into your betting data.</li>
-                <li>Currency Flexibility: Toggle the currency displayed, allowing you to view your stats in whatever currency you prefer.</li>
-              </ul>
-              <MainButton>Learn More</MainButton>
-            </FeatureSection>
+              header={"Manage and Track Your Bets Effortlessly"}
+              features={[
+                "Quickly check total bets, win rate, and profit",
+                "Easily log your bets",
+                "Dive into analytics and visualizations via the Dashboards"
+              ]}
+            />
 
             <FeatureSection
               scrollYProgress={scrollYProgress}
               thresholds={[0,1/5,2/5,3/5,4/5,1]}
               positions={["100%", "100%", "0%", "0%", "-100%", "-100%"]}
               opacities={[0,0,1,1,0,0]}
-            >
-              <h2 className="text-4xl font-bold mb-6">Monitor Your Betting Balance and Track Performance Trends</h2>
-              <ul className="text-xl mb-8 list-disc list-inside [&_li]:mb-4">
-                <li>Total Balance Display: Easily see your current total balance, providing a quick snapshot of your overall betting position.</li>
-                <li>Balance History Chart: Visualize your balance fluctuations over time with a historical chart, helping you identify trends and understand the impact of your betting decisions.</li>
-                <li>Key Performance Indicators: Monitor essential stats like monthly profit, win rate, average win, and average loss to track progress and identify areas for improvement.</li>
-              </ul>
-              <MainButton>Learn More</MainButton>
-            </FeatureSection>
+              header={"Monitor Your Betting Balance and Track Performance Trends"}
+              features={[
+                "Check your current total balance for a quick snapshot of your betting position",
+                "See balance trends with a historical chart",
+                "Track monthly profit, win rate, and averages"
+              ]}
+            />
 
             <FeatureSection
               scrollYProgress={scrollYProgress}
               thresholds={[0,1/5,2/5,3/5,4/5,1]}
               positions={ ["100%", "100%", "100%", "100%", "0%", "0%"]}
               opacities={[0,0,0,0,1,1]}
-            >
-              <h2 className="text-4xl font-bold mb-6">Track Your Betting Performance with Detailed Statistics</h2>
-              <ul className="text-xl mb-8 list-disc list-inside [&_li]:mb-4">
-                <li>Win Rate: Instantly see your win rate for different types of bets represented in graphical format.</li>
-                <li>Profit Summary: Review a monthly profit summary with total profit, win rate, biggest win, biggest loss, average stake, and average odds to find strengths and weaknesses in your strategy.</li>
-              </ul>
-              <MainButton>Learn More</MainButton>
-            </FeatureSection>
-
+              header={"Track Your Betting Performance with Detailed Statistics"}
+              features={[
+                "Check your win rate for different bets displayed graphically",
+                "View a monthly summary with profit, win rate, biggest wins/losses and other statistics"
+              ]}
+            />
           </div>
 
           <div className="h-[60vh] md:h-full md:w-1/2 flex items-center">
@@ -89,7 +80,7 @@ export default function AppShowcase() {
             >
               <div className="relative h-full aspect-4/6 max-w-[400px] mx-auto flex items-center justify-center">
                 <motion.div
-                  className="absolute -z-10 size-100 bg-secondary blur-3xl rounded-full"
+                  className="absolute -z-10 size-40 md:size-100 bg-secondary blur-3xl rounded-full"
                   style={{y}}
                 />
                 <motion.img
@@ -124,9 +115,10 @@ interface IFeatureSectionProps {
   thresholds: number[];
   positions: string[];
   opacities: number[];
-  children: React.ReactNode;
+  header: string;
+  features: string[];
 }
-function FeatureSection({scrollYProgress, thresholds, positions, opacities, children}:IFeatureSectionProps) {
+function FeatureSection({scrollYProgress, thresholds, positions, opacities, header, features}:IFeatureSectionProps) {
   const x = useTransform(scrollYProgress,
     thresholds,
     positions
@@ -138,10 +130,14 @@ function FeatureSection({scrollYProgress, thresholds, positions, opacities, chil
 
   return (
     <motion.div
-      className="flex w-full flex-col px-10 absolute"
+      className="flex w-full flex-col px-5 md:px-10 absolute"
       style={{x, opacity}}
     >
-      {children}
+      <h2 className={"text-xl md:text-2xl lg:text-4xl font-bold mb-4 md:mb-6"}>{header}</h2>
+      <ul className={"text-sm md:text-lg lg:text-xl mb-8 list-disc list-inside [&_li]:mb-2 md:[&_li]:mb-4"}>
+        {features.map((feature, index) => (<li key={index}>{feature}</li>))}
+      </ul>
+      <MainButton className={"hidden md:block"}>Learn More</MainButton>
     </motion.div>
   )
 }

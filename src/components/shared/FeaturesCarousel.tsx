@@ -14,6 +14,8 @@ interface IProps {
 const FeaturesCarousel:FC<IProps> = ({itemsData, currentSlide, setCurrentSlide}) => {
   const [[activeIndex, direction], setActiveIndex] = useState([-1, 0]);
   const parentRef = useRef<HTMLDivElement|null>(null)
+  const wrapperRef = useRef<HTMLDivElement|null>(null);
+  const [wrapperWidth, setWrapperWidth] = useState(0);
 
   const itemsLength = itemsData?.length || 0
   const indexInArrayScope = ((activeIndex % itemsLength) + itemsLength) % itemsLength;
@@ -22,6 +24,12 @@ const FeaturesCarousel:FC<IProps> = ({itemsData, currentSlide, setCurrentSlide})
     indexInArrayScope,
     indexInArrayScope + 3
   );
+
+  useEffect(() => {
+    if (wrapperRef.current) {
+      setWrapperWidth(wrapperRef.current.offsetWidth);
+    }
+  }, []);
 
   useEffect(() => {
     setCurrentSlide((indexInArrayScope + 1) % itemsLength)
@@ -54,7 +62,7 @@ const FeaturesCarousel:FC<IProps> = ({itemsData, currentSlide, setCurrentSlide})
       className="flex items-center relative justify-center w-full"
       ref={parentRef}
     >
-      <div className="flex m-5 overflow-hidden">
+      <div className="flex m-5 overflow-hidden justify-center" ref={wrapperRef}>
         <AnimatePresence mode="popLayout" initial={false}>
           {visibleItems.map((item, i) => {
             const isLeft = item === visibleItems[0]
@@ -69,15 +77,16 @@ const FeaturesCarousel:FC<IProps> = ({itemsData, currentSlide, setCurrentSlide})
                 dragElastic={0.5}
                 onDragEnd={handleDragEnd}
                 className={cn(
-                  "relative h-[50vh] w-[60vw] bg-grey-1 border border-white/10 rounded-2xl text-white",
-                  "p-10 flex flex-col justify-center gap-10",
+                  "relative h-[50vh] min-w-[50vw] md:min-w-[40vw] bg-grey-1 border border-white/10 rounded-2xl text-white",
+                  "p-6 md:p-10 flex flex-col justify-center gap-5 md:gap-10",
                   {"cursor-pointer": !isCenter}
                 )}
                 key={item.title}
                 layout
                 custom={{
                   direction,
-                  position: () => isLeft ? 'left' : isRight ? 'right' : 'center'
+                  position: () => isLeft ? 'left' : isRight ? 'right' : 'center',
+                  wrapperWidth
                 }}
                 variants={variants}
                 initial="enter"
@@ -87,11 +96,11 @@ const FeaturesCarousel:FC<IProps> = ({itemsData, currentSlide, setCurrentSlide})
                 onClick={() => handleClick(isLeft ? -1 : isRight ? 1 : 0)}
                 id={`item-${i}`}
               >
-                <div className="flex justify-center [&_svg]:size-20 [&_svg]:text-secondary">
+                <div className="flex justify-center [&_svg]:size-16 md:[&_svg]:size-20 [&_svg]:text-secondary">
                   {item.icon}
                 </div>
-                <h4 className={"text-3xl text-center"}>{item.title}</h4>
-                <p className={"text-center text-xl leading-xl"}>{item.description}</p>
+                <h4 className={"text-xl md:text-3xl text-center"}>{item.title}</h4>
+                <p className={"text-center text-md md:text-xl leading-xl"}>{item.description}</p>
               </motion.div>
             );
           })}
@@ -101,12 +110,18 @@ const FeaturesCarousel:FC<IProps> = ({itemsData, currentSlide, setCurrentSlide})
   );
 };
 
-const sideOffset = 200
+// const sideOffset = 100
 const variants = {
-  enter: ({direction}:{direction:number}) => {
-    return {scale: 0.2, x: direction < 1 ? sideOffset : -sideOffset, opacity: 0};
+  enter: ({direction, wrapperWidth}:{direction:number,wrapperWidth:number,}) => {
+    const sideOffset = wrapperWidth / 3 / 2;
+    return {
+      scale: 0.2,
+      x: direction < 1 ? sideOffset : -sideOffset,
+      opacity: 0
+    };
   },
-  center: ({position, direction}:{position:()=>"left"|"right"|"center", direction:number}) => {
+  center: ({position, direction, wrapperWidth}:{position:()=>"left"|"right"|"center", direction:number, wrapperWidth:number}) => {
+    const sideOffset = wrapperWidth / 3 / 2;
     return {
       scale: position() === "center" ? 1 : 0.7,
       x: position() === "left" ? sideOffset : position() === "right" ? -sideOffset : 0,

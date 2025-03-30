@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import useMousePosition from "@/hooks/useMousePosition";
 import MainButton from "@/components/shared/MainButton";
+import {useResponsive} from "@/hooks/useResponsive";
 
 export default function Hero() {
   const {
@@ -10,18 +11,19 @@ export default function Hero() {
     mousePosition,
     handleMouseMove
   } = useMousePosition()
+  const {isDesktop} = useResponsive();
 
   return (
     <section
       id="hero"
       className="min-h-screen flex items-center justify-center relative bg-gradient-to-b from-dark-main to-dark-secondary"
-      onMouseMove={handleMouseMove}
+      onMouseMove={isDesktop ? handleMouseMove : undefined}
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-center px-4"
+        className="text-center px-4 -mt-20 md:mt-0"
       >
         <div className="relative">
           <h1
@@ -31,7 +33,8 @@ export default function Hero() {
               WebkitTextFillColor: 'transparent',
               WebkitBackgroundClip: 'text',
               backgroundClip: 'text',
-              backgroundImage: `radial-gradient(
+              backgroundImage: isDesktop ?
+                `radial-gradient(
                 circle at ${mousePosition.x}px ${mousePosition.y}px,
                 var(--secondary) 0%,
                 rgba(0, 242, 254, 0.9) 15%,
@@ -39,6 +42,7 @@ export default function Hero() {
                 rgba(0, 242, 254, 0.5) 50%,
                 transparent 100%
               )`
+                : 'radial-gradient(#ffffff 0%, var(--secondary) 100%)'
             }}
           >
             Transform <br/>Your <br/>Betting Game
