@@ -62,7 +62,7 @@ const FeaturesCarousel:FC<IProps> = ({itemsData, currentSlide, setCurrentSlide})
       className="flex items-center relative justify-center w-full"
       ref={parentRef}
     >
-      <div className="flex m-5 overflow-hidden justify-center" ref={wrapperRef}>
+      <div className="flex m-5 overflow-hidden- justify-center" ref={wrapperRef}>
         <AnimatePresence mode="popLayout" initial={false}>
           {visibleItems.map((item, i) => {
             const isLeft = item === visibleItems[0]
@@ -78,7 +78,7 @@ const FeaturesCarousel:FC<IProps> = ({itemsData, currentSlide, setCurrentSlide})
                 onDragEnd={handleDragEnd}
                 className={cn(
                   "relative h-[50vh] min-w-[70%] md:min-w-[60%] lg:min-w-[50%] bg-grey-1 border border-white/10 rounded-2xl text-white",
-                  "p-6 md:p-10 flex flex-col justify-center gap-5 md:gap-10",
+                  "p-6 md:p-10 xl:px-20 flex flex-col justify-center gap-5 md:gap-10",
                   {"cursor-pointer": !isCenter}
                 )}
                 key={item.title}
