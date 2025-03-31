@@ -30,7 +30,12 @@ export default function AppShowcase() {
     <section ref={containerRef} className="h-[1200vh] relative bg-gradient-to-b from-dark-main to-dark-secondary" id="showcase">
       <div className={"sticky top-0 h-screen flex py-20"}>
         <div className="container h-full mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-          <div className="h-[40vh] md:h-full w-full md:w-1/2 relative overflow-hidden flex items-center">
+          <div
+            className="h-[40vh] md:h-full w-full md:w-1/2 relative overflow-hidden flex items-center"
+            style={{
+              maskImage: "linear-gradient(to left, transparent, transparent 50px, black 100px)",
+          }}
+          >
             <FeatureSection
               scrollYProgress={scrollYProgress}
               thresholds={[0,1/5,2/5,3/5,4/5,1]}
@@ -130,7 +135,7 @@ function FeatureSection({scrollYProgress, thresholds, positions, opacities, head
 
   return (
     <motion.div
-      className="flex w-full flex-col px-5 md:px-10 absolute"
+      className="flex w-full flex-col px-5 md:pl-10 md:pr-25 absolute"
       style={{x, opacity}}
     >
       <h2 className={"text-xl md:text-2xl lg:text-4xl font-bold mb-4 md:mb-6"}>{header}</h2>
