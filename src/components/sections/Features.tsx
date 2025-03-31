@@ -87,7 +87,7 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="h-screen relative bg-gradient-to-b from-dark-main to-dark-secondary"
+      className="h-screen max-w-screen overflow-hidden relative bg-gradient-to-b from-dark-main to-dark-secondary"
     >
       <div
         className={"container mx-auto flex flex-col items-center justify-center py-20"}

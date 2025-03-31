@@ -62,7 +62,7 @@ const FeaturesCarousel:FC<IProps> = ({itemsData, currentSlide, setCurrentSlide})
       className="flex items-center relative justify-center w-full"
       ref={parentRef}
     >
-      <div className="flex m-5 overflow-hidden- justify-center" ref={wrapperRef}>
+      <div className="flex m-5 overflow-hidden lg:overflow-visible justify-center" ref={wrapperRef}>
         <AnimatePresence mode="popLayout" initial={false}>
           {visibleItems.map((item, i) => {
             const isLeft = item === visibleItems[0]
