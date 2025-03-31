@@ -87,10 +87,10 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="h-screen relative bg-dark-secondary"
+      className="h-screen relative bg-gradient-to-b from-dark-main to-dark-secondary"
     >
       <div
-        className={"sticky top-0 h-screen flex flex-col items-center justify-center py-20"}
+        className={"container mx-auto flex flex-col items-center justify-center py-20"}
         onMouseMove={handleMouseMove}
       >
         <AnimatedHeading

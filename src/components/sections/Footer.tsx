@@ -7,6 +7,7 @@ import TermsAndConditionsModal from "@/components/modals/TermsAndConditionsModal
 import InstagramIcon from "@/components/svg/InstagramIcon";
 import TiktokIcon from "@/components/svg/TiktokIcon";
 import TextRotate from "@/components/ui/TextRotate";
+import {cn} from "@/lib/utils";
 
 export default function Footer() {
   const {goToAnchor} = useScrollTo();
@@ -21,7 +22,7 @@ export default function Footer() {
       <footer className="bg-dark-secondary text-white py-14">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 justify-center md:justify-start text-center md:text-left" onClick={goToAnchor}>
-            <div className={"inline-block text-center md:text-left"}>
+            <FooterSection className={"inline-block text-center md:text-left"}>
               <a href="#hero" className={"inline-block mb-6"}>
                 <Image
                   src="/logo.svg"
@@ -30,19 +31,19 @@ export default function Footer() {
                   height={25}
                 />
               </a>
-              <p>
+              <p className={"w-50"}>
                 Transform your betting experience with AI-powered analytics
               </p>
-            </div>
-            <div>
+            </FooterSection>
+            <FooterSection>
               <h4 className="font-semibold mb-4">Links</h4>
               <ul className="space-y-2">
                 <li><a href="#showcase" className="text-secondary/80 hover:text-white">Showcase</a></li>
                 <li><a href="#features" className="text-secondary/80 hover:text-white">Features</a></li>
                 <li><a href="#how-it-works" className="text-secondary/80 hover:text-white">How It Works</a></li>
               </ul>
-            </div>
-            <div>
+            </FooterSection>
+            <FooterSection>
               <h4 className="font-semibold mb-4">Information</h4>
               <ul className="space-y-2">
                 <li className="text-secondary/80 cursor-pointer hover:text-white"
@@ -56,8 +57,8 @@ export default function Footer() {
                   Terms & Conditions
                 </li>
               </ul>
-            </div>
-            <div>
+            </FooterSection>
+            <FooterSection>
               <h4 className="font-semibold mb-4">Follow Us</h4>
               <div className="flex space-x-4 justify-center md:justify-start">
                 <a href="https://www.instagram.com/zorthq?igsh=MXA5bWE2dDQ0dHQyMw=="
@@ -69,7 +70,7 @@ export default function Footer() {
                   <TiktokIcon/>
                 </a>
               </div>
-            </div>
+            </FooterSection>
           </div>
 
           <div className="border-t border-white/40 mt-8 pt-8 text-center">
@@ -99,4 +100,14 @@ export default function Footer() {
       </footer>
     </>
   );
+}
+
+function FooterSection({children, className}:{children: React.ReactNode, className?: string}) {
+  return (
+    <div className="flex justify-center">
+      <div className={cn("inline-flex flex-col",className)}>
+        {children}
+      </div>
+    </div>
+  )
 }

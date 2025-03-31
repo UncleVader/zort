@@ -27,7 +27,7 @@ export default function AppShowcase() {
   );
 
   return (
-    <section ref={containerRef} className="h-[1200vh] relative bg-dark-main" id="showcase">
+    <section ref={containerRef} className="h-[1200vh] relative bg-gradient-to-b from-dark-main to-dark-secondary" id="showcase">
       <div className={"sticky top-0 h-screen flex py-20"}>
         <div className="container h-full mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
           <div className="h-[40vh] md:h-full w-full md:w-1/2 relative overflow-hidden flex items-center">

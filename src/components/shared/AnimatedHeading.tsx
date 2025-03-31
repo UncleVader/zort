@@ -1,5 +1,7 @@
+"use client"
 import {motion} from "framer-motion";
 import {FC, RefObject} from "react";
+import {useResponsive} from "@/hooks/useResponsive";
 
 interface IProps {
   children: React.ReactNode;
@@ -7,6 +9,8 @@ interface IProps {
   mousePosition: { x: number, y: number };
 }
 const AnimatedHeading:FC<IProps> = ({targetRef,mousePosition,children}) => {
+  const {isDesktop} = useResponsive();
+
   return (
     <motion.h2
       ref={targetRef}
@@ -19,14 +23,14 @@ const AnimatedHeading:FC<IProps> = ({targetRef,mousePosition,children}) => {
         WebkitTextFillColor: 'transparent',
         WebkitBackgroundClip: 'text',
         backgroundClip: 'text',
-        backgroundImage: `radial-gradient(
-                circle at ${mousePosition.x}px ${mousePosition.y}px,
-                var(--secondary) 0%,
-                rgba(0, 242, 254, 0.9) 15%,
-                rgba(0, 242, 254, 0.85) 35%,
-                rgba(0, 242, 254, 0.8) 50%,
-                transparent 100%
-              )`
+        backgroundImage: isDesktop
+          ? `radial-gradient(
+              circle at ${mousePosition.x}px ${mousePosition.y}px,
+              var(--secondary) 0%,
+              #ffffff 75%,
+              #ffffff 100%
+            )`
+          : 'radial-gradient(#ffffff 0%, var(--secondary) 100%)'
       }}
     >
       {children}

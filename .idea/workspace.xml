@@ -18,19 +18,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba0de95-0d03-4b34-aa96-32c1b6181430" name="Changes" comment="navbar done">
-      <change afterPath="$PROJECT_DIR$/src/components/ui/TextRotate.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useResponsive.ts" afterDir="false" />
+    <list default="true" id="3ba0de95-0d03-4b34-aa96-32c1b6181430" name="Changes" comment="site is done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modals/TermsAndConditionsModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/TermsAndConditionsModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/AppShowcase.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/AppShowcase.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/Features.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Features.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/HowItWorks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/HowItWorks.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sections/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/AnimatedHeading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/AnimatedHeading.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/shared/FeaturesCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/FeaturesCarousel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/ModalWindow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/ModalWindow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +41,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "UncleVader"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/UncleVader/zort.git",
+    "accountId": "a2483310-9a35-48b7-b11f-327f9d5b47b6"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -49,29 +62,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/unclevader/Documents/work/bet-ai-prediction/src/hooks&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/unclevader/Documents/work/bet-ai-prediction/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/unclevader/Documents/work/bet-ai-prediction/src/app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "ts.external.directory.path": "/Users/unclevader/Documents/work/bet-ai-prediction/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/src/hooks" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/components/svg" />
       <recent name="$PROJECT_DIR$/src/components/shared" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/modals" />
@@ -79,6 +93,23 @@
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/betting-ai-landing/src/components" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -97,7 +128,7 @@
       <updated>1743091515124</updated>
       <workItem from="1743091516214" duration="22681000" />
       <workItem from="1743159727570" duration="25754000" />
-      <workItem from="1743354490323" duration="9974000" />
+      <workItem from="1743354490323" duration="14699000" />
     </task>
     <task id="LOCAL-00001" summary="features section done">
       <option name="closed" value="true" />
@@ -123,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743195123868</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="site is done">
+      <option name="closed" value="true" />
+      <created>1743365627954</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743365627954</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +172,7 @@
     <MESSAGE value="features section done" />
     <MESSAGE value="footer done" />
     <MESSAGE value="navbar done" />
-    <option name="LAST_COMMIT_MESSAGE" value="navbar done" />
+    <MESSAGE value="site is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="site is done" />
   </component>
 </project>

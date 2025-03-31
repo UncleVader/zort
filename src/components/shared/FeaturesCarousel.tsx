@@ -77,7 +77,7 @@ const FeaturesCarousel:FC<IProps> = ({itemsData, currentSlide, setCurrentSlide})
                 dragElastic={0.5}
                 onDragEnd={handleDragEnd}
                 className={cn(
-                  "relative h-[50vh] min-w-[50vw] md:min-w-[40vw] bg-grey-1 border border-white/10 rounded-2xl text-white",
+                  "relative h-[50vh] min-w-[70%] md:min-w-[60%] lg:min-w-[50%] bg-grey-1 border border-white/10 rounded-2xl text-white",
                   "p-6 md:p-10 flex flex-col justify-center gap-5 md:gap-10",
                   {"cursor-pointer": !isCenter}
                 )}
@@ -99,8 +99,8 @@ const FeaturesCarousel:FC<IProps> = ({itemsData, currentSlide, setCurrentSlide})
                 <div className="flex justify-center [&_svg]:size-16 md:[&_svg]:size-20 [&_svg]:text-secondary">
                   {item.icon}
                 </div>
-                <h4 className={"text-xl md:text-3xl text-center"}>{item.title}</h4>
-                <p className={"text-center text-md md:text-xl leading-xl"}>{item.description}</p>
+                <h4 className={"text-xl md:text-3xl xl:text-5xl text-center"}>{item.title}</h4>
+                <p className={"text-center text-md md:text-xl xl:text-3xl leading-xl"}>{item.description}</p>
               </motion.div>
             );
           })}

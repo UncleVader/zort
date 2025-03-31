@@ -5,8 +5,9 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'BetTracker AI - Smart Betting Analytics',
+  title: 'Zort - AI-Powered Bet Tracking',
   description: 'Advanced AI-powered betting tracking and analysis application',
+  keywords: ["Zort", "bet tracking", "ai powered bet tracking",],
 };
 
 export default function RootLayout({
