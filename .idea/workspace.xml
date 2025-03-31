@@ -18,13 +18,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba0de95-0d03-4b34-aa96-32c1b6181430" name="Changes" comment="styles polishing">
-      <change afterPath="$PROJECT_DIR$/public/screen1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/screen2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/screen3.webp" afterDir="false" />
+    <list default="true" id="3ba0de95-0d03-4b34-aa96-32c1b6181430" name="Changes" comment="optimizations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/AppShowcase.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/AppShowcase.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/TextRotate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/TextRotate.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +117,7 @@
       <updated>1743091515124</updated>
       <workItem from="1743091516214" duration="22681000" />
       <workItem from="1743159727570" duration="25754000" />
-      <workItem from="1743354490323" duration="19474000" />
+      <workItem from="1743354490323" duration="20401000" />
     </task>
     <task id="LOCAL-00001" summary="features section done">
       <option name="closed" value="true" />
@@ -187,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743421811583</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="optimizations">
+      <option name="closed" value="true" />
+      <created>1743422580561</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1743422580561</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +204,7 @@
     <MESSAGE value="navbar done" />
     <MESSAGE value="site is done" />
     <MESSAGE value="styles polishing" />
-    <option name="LAST_COMMIT_MESSAGE" value="styles polishing" />
+    <MESSAGE value="optimizations" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimizations" />
   </component>
 </project>
