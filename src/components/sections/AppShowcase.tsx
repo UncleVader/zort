@@ -89,19 +89,19 @@ export default function AppShowcase() {
                   style={{y}}
                 />
                 <motion.img
-                  src={"/screen1.png"}
+                  src={"/screen1.webp"}
                   alt="BetTracker AI"
                   className={"object-contain absolute size-full"}
                   style={{opacity: opacity1}}
                 />
                 <motion.img
-                  src={"/screen2.png"}
+                  src={"/screen2.webp"}
                   alt="BetTracker AI"
                   className={"object-contain absolute size-full"}
                   style={{opacity: opacity2}}
                 />
                 <motion.img
-                  src={"/screen3.png"}
+                  src={"/screen3.webp"}
                   alt="BetTracker AI"
                   className={"object-contain absolute size-full"}
                   style={{opacity: opacity3}}

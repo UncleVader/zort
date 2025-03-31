@@ -2,8 +2,15 @@
 import Image from 'next/image';
 import useScrollTo from "@/hooks/useScrollTo";
 import React, {useState} from "react";
-import ContactModal from "@/components/modals/ContactModal";
-import TermsAndConditionsModal from "@/components/modals/TermsAndConditionsModal";
+import dynamic from "next/dynamic";
+const ContactModal = dynamic(
+  () => import("@/components/modals/ContactModal"),
+  { ssr: false }
+);
+const TermsAndConditionsModal = dynamic(
+  () => import("@/components/modals/TermsAndConditionsModal"),
+  { ssr: false }
+);
 import InstagramIcon from "@/components/svg/InstagramIcon";
 import TiktokIcon from "@/components/svg/TiktokIcon";
 import TextRotate from "@/components/ui/TextRotate";
