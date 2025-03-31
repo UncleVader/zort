@@ -5,7 +5,12 @@ export const useResponsive = () => {
     query: '(min-width: 1024px)'
   })
 
+  const isSmallScreen = useMediaQuery({
+    query: '(max-width: 768px)'
+  })
+
   return {
-    isDesktop
+    isDesktop,
+    isSmallScreen
   };
 };

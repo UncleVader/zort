@@ -3,12 +3,15 @@
 import {motion, MotionValue, useScroll, useTransform} from 'framer-motion';
 import React, {useRef} from 'react';
 import MainButton from "@/components/shared/MainButton";
+import {useResponsive} from "@/hooks/useResponsive";
 
 export default function AppShowcase() {
   const containerRef = useRef<HTMLDivElement>(null);
   const {scrollYProgress} = useScroll({
     target: containerRef,
   });
+  const {isSmallScreen} = useResponsive();
+
   const y = useTransform(scrollYProgress,
     [0,1/4,1/2,3/4,1],
     ["-40%","50%","-40%","50%","-40%"]
@@ -33,7 +36,7 @@ export default function AppShowcase() {
           <div
             className="h-[40vh] md:h-full w-full md:w-1/2 relative overflow-hidden flex items-center"
             style={{
-              maskImage: "linear-gradient(to left, transparent, transparent 50px, black 100px)",
+              ...(isSmallScreen ? {} : {maskImage: "linear-gradient(to left, transparent, transparent 50px, black 100px)"}),
           }}
           >
             <FeatureSection
