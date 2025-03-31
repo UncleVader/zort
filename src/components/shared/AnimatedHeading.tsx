@@ -1,6 +1,6 @@
 "use client"
 import {motion} from "framer-motion";
-import {FC, RefObject} from "react";
+import {FC, RefObject, useEffect, useState} from "react";
 import {useResponsive} from "@/hooks/useResponsive";
 
 interface IProps {
@@ -10,6 +10,23 @@ interface IProps {
 }
 const AnimatedHeading:FC<IProps> = ({targetRef,mousePosition,children}) => {
   const {isDesktop} = useResponsive();
+  const [gradientStyle, setGradientStyle] = useState({});
+
+  useEffect(() => {
+    setGradientStyle({
+      WebkitTextFillColor: 'transparent',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      backgroundImage: isDesktop
+        ? `radial-gradient(
+              circle at ${mousePosition.x}px ${mousePosition.y}px,
+              var(--secondary) 0%,
+              #ffffff 75%,
+              #ffffff 100%
+            )`
+        : 'radial-gradient(#ffffff 0%, var(--secondary) 100%)'
+    });
+  }, [mousePosition.x, mousePosition.y, isDesktop]);
 
   return (
     <motion.h2
@@ -19,19 +36,7 @@ const AnimatedHeading:FC<IProps> = ({targetRef,mousePosition,children}) => {
       viewport={{once: false}}
       transition={{duration: 0.8}}
       className="text-3xl md:text-7xl font-bold mb-6 p-4 text-center"
-      style={{
-        WebkitTextFillColor: 'transparent',
-        WebkitBackgroundClip: 'text',
-        backgroundClip: 'text',
-        backgroundImage: isDesktop
-          ? `radial-gradient(
-              circle at ${mousePosition.x}px ${mousePosition.y}px,
-              var(--secondary) 0%,
-              #ffffff 75%,
-              #ffffff 100%
-            )`
-          : 'radial-gradient(#ffffff 0%, var(--secondary) 100%)'
-      }}
+      style={gradientStyle}
     >
       {children}
 

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import useMousePosition from "@/hooks/useMousePosition";
 import MainButton from "@/components/shared/MainButton";
 import {useResponsive} from "@/hooks/useResponsive";
+import {useEffect, useState} from "react";
 
 export default function Hero() {
   const {
@@ -12,6 +13,27 @@ export default function Hero() {
     handleMouseMove
   } = useMousePosition()
   const {isDesktop} = useResponsive();
+  const [gradientStyle, setGradientStyle] = useState({});
+
+  useEffect(() => {
+    const updateStyle = () => {
+      setGradientStyle({
+        WebkitTextFillColor: 'transparent',
+        WebkitBackgroundClip: 'text',
+        backgroundClip: 'text',
+        backgroundImage: isDesktop ?
+          `radial-gradient(
+          circle at ${mousePosition.x}px ${mousePosition.y}px,
+          var(--secondary) 0%,
+          #ffffff 75%,
+          #ffffff 100%
+        )`
+          : 'radial-gradient(#ffffff 0%, var(--secondary) 100%)'
+      });
+    }
+    updateStyle()
+
+  }, [mousePosition.x, mousePosition.y, isDesktop]);
 
   return (
     <section
@@ -30,19 +52,7 @@ export default function Hero() {
             <h1
               ref={targetRef}
               className="text-5xl md:text-7xl font-bold mb-6 p-4"
-              style={{
-                WebkitTextFillColor: 'transparent',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                backgroundImage: isDesktop ?
-                  `radial-gradient(
-                circle at ${mousePosition.x}px ${mousePosition.y}px,
-                var(--secondary) 0%,
-                #ffffff 75%,
-                #ffffff 100%
-              )`
-                  : 'radial-gradient(#ffffff 0%, var(--secondary) 100%)'
-              }}
+              style={gradientStyle}
             >
               Transform <br/>Your <br/>Betting Game
             </h1>

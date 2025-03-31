@@ -1,7 +1,7 @@
 "use client"
 
 import {AnimatePresence, motion, PanInfo} from "framer-motion";
-import {useState, useEffect, useRef, FC, Dispatch, SetStateAction} from "react";
+import {Dispatch, FC, SetStateAction, useEffect, useRef, useState} from "react";
 import {TFeature} from "@/types/common";
 import {cn} from "@/lib/utils";
 
@@ -26,9 +26,30 @@ const FeaturesCarousel:FC<IProps> = ({itemsData, currentSlide, setCurrentSlide})
   );
 
   useEffect(() => {
-    if (wrapperRef.current) {
-      setWrapperWidth(wrapperRef.current.offsetWidth);
-    }
+    const updateWrapperWidth = () => {
+      if (wrapperRef.current) {
+        setWrapperWidth(wrapperRef.current.offsetWidth);
+      }
+    };
+
+    const throttledResizeHandler = (() => {
+      let timeout: NodeJS.Timeout | null = null;
+      return () => {
+        if (!timeout) {
+          timeout = setTimeout(() => {
+            updateWrapperWidth();
+            timeout = null;
+          }, 200); // Throttle delay in milliseconds
+        }
+      };
+    })();
+
+    updateWrapperWidth();
+    window.addEventListener("resize", throttledResizeHandler);
+
+    return () => {
+      window.removeEventListener("resize", throttledResizeHandler);
+    };
   }, []);
 
   useEffect(() => {
